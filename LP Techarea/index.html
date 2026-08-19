@@ -494,6 +494,7 @@
     }
 
     .slider-slide {
+      position: relative;
       min-width: 100%;
       padding: 0.5rem;
     }
@@ -503,6 +504,37 @@
       height: auto;
       border-radius: calc(var(--radius-lg) - 4px);
       display: block;
+    }
+
+    /* ================================================================
+       SLIDE TITLE / OVERLAY
+       ================================================================ */
+    .slide-overlay {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      padding: 0.75rem 1rem;
+      background: rgba(11, 8, 24, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .slide-overlay h3 {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0 0 0.1rem 0;
+    }
+
+    .slide-overlay p {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin: 0;
     }
 
     .slider-dots {
@@ -567,6 +599,24 @@
 
     .slider-btn.next {
       right: 12px;
+    }
+
+    /* Mobile: overlay lebih kecil */
+    @media (max-width: 599px) {
+      .slide-overlay {
+        bottom: 0.75rem;
+        left: 0.75rem;
+        right: 0.75rem;
+        padding: 0.5rem 0.75rem;
+      }
+
+      .slide-overlay h3 {
+        font-size: 0.7rem;
+      }
+
+      .slide-overlay p {
+        font-size: 0.55rem;
+      }
     }
 
     .social-proof {
@@ -1718,7 +1768,7 @@
   </nav>
 
   <!-- ============================================================
-  HERO — DENGAN SLIDER
+  HERO — DENGAN SLIDER & JUDUL SLIDE
   ============================================================ -->
   <section class="hero" id="hero">
     <div class="container">
@@ -1762,14 +1812,29 @@
         <div class="hero-visual">
           <div class="slider-container" id="heroSlider">
             <div class="slider-wrapper" id="sliderWrapper">
+              <!-- SLIDE 1 -->
               <div class="slider-slide">
-                <img src="assets/1.webp" alt="Dashboard Techarea 1" loading="lazy">
+                <img src="assets/3.webp" alt="Dashboard Techarea" loading="lazy">
+                <div class="slide-overlay">
+                  <h3>📊 CRM</h3>
+                  <p>Pantau semua transaksi dalam satu tempat</p>
+                </div>
               </div>
+              <!-- SLIDE 2 -->
               <div class="slider-slide">
-                <img src="assets/2.webp" alt="Dashboard Techarea 2" loading="lazy">
+                <img src="assets/2.webp" alt="Meta Ads Integration" loading="lazy">
+                <div class="slide-overlay">
+                  <h3>📈 Meta Ads Integration</h3>
+                  <p>Kelola iklan dan traffic secara terintegrasi</p>
+                </div>
               </div>
+              <!-- SLIDE 3 -->
               <div class="slider-slide">
-                <img src="assets/3.webp" alt="Dashboard Techarea 3" loading="lazy">
+                <img src="assets/1.webp" alt="E-Commerce System" loading="lazy">
+                <div class="slide-overlay">
+                  <h3>🛒 E-Commerce System</h3>
+                  <p>Sistem penjualan lengkap untuk bisnis Anda</p>
+                </div>
               </div>
             </div>
             <button class="slider-btn prev" id="prevBtn" aria-label="Previous slide">‹</button>
